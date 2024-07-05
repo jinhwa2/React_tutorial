@@ -35,7 +35,7 @@ const 작성하는공간 = () => {
       onChange={ (e) => {setInputPhone(e.target.value)}}
       value={inputPhone}/>
 
-      <button onClick={유저추가}>유저추가</button>
+      <button onClick={유저추가}>추가하기</button>
 
 
     </div>

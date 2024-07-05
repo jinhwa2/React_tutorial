@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import Game from './component/Game';
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <h1>홈페이지에 오신 것은 환영합니다.</h1>
+        <Game/>
       </header>
       <main>
         <section>
