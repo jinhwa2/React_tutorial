@@ -1,12 +1,12 @@
- import React, { useState, useEffect } from 'react';
-import './TicTaptoe.css';
+import React, { useState, useEffect } from 'react';
+import "./TicTaptoe.css";
 import { Link } from 'react-router-dom';
 
 /*
-useEffect(() => {}, [
-   //TictapToe.js가 실행되면 특정 기능 시작!
-
-])
+import React, { useState,useEffect } from "react";
+useEffect(() =>{
+    //TictapToe.js가 실행되면 특정 기능 시작!
+}, [])
 */
 const 배열랜덤섞기 = (배열) => {
   //sort = 가지런히 정렬  랜덤으로 나온 값을 정렬
@@ -22,7 +22,7 @@ const TicTapToe = () => {
   // 어떤 숫자를 가지고 오냐면 0 => 0 + 1  1~9 까지 생성
   // 1 ~ 9 까지 생성된 수를 배열랜덤섞기를 이용해서 숫자가 담긴 그릇을 섞는 것
    const [numbers, setNumbers] =useState(
-    배열랜덤섞기([...Array(9).keys()].map(n => n +1)));
+    배열랜덤섞기([...Array(9).keys()].map((n) => n +1)));
   
    //사용자가 클릭해야하는 다음 숫자를 나타냄
    const[nextNumber, setNextNumber] = useState(1); //사용자가 클릭해야하는 처음수가 1이기 때문
@@ -37,7 +37,7 @@ const TicTapToe = () => {
          if(number === 9) {
               setMessage('축하합니다. 모든 숫자를 순서대로 클릭했습니다.');
              //setIsCorrect(true)
-            //9까지 왔으면 10으로 만들어줘요
+            //9까지 왔으면 다음 숫자를 10으로 만들어줘요
 
             } else {
                setNextNumber(nextNumber + 1);
@@ -49,14 +49,19 @@ const TicTapToe = () => {
    };
    
    const 재시작버튼 = () => {
-    setNumbers(배열랜덤섞기([...Array(20).keys()].map((n) => n + 1)));
-   }
+    setNumbers(배열랜덤섞기([...Array(9).keys()].map((n) => n + 1))); //다시 초기 숫자 세팅
+     //다음숫자 세팅
+     setNextNumber(1);
+     //메세지 세팅
+     setMessage("");
+     //setIsCorrect(false);
+   };
    
    
    return (
     <div className="tictaptoe-container">
       <h1>틱탭토</h1>
-      <div cassName="tictaptoe-grid">
+      <div className="tictaptoe-grid">
         {numbers.map((number) => (
           <button className="tictaptoe-button" 
           key={number} 
@@ -73,7 +78,11 @@ const TicTapToe = () => {
    
       
       <button className="restart-button" onClick={재시작버튼}>게임 재시작</button>
-     <Link to="/tictaptoe"><button>처음으로 이동</button></Link>
+      {/*예를들어 수를 모두 맞출 경우에만 다음단계로 이동버튼 보여주기
+        다음단계로 이동 버튼이 나오기 위해서 nextNumber 숫자값이 10일 때 다음 단계로 이동버튼이
+        나오게 설정
+      */}
+     {nextNumber > 9 && (<Link to="/ttt-twoStep"><button>다음단계로 이동</button></Link>)}
     </div>
   );
 };
