@@ -27,67 +27,75 @@ const TicTapToe = () => {
    //사용자가 클릭해야하는 다음 숫자를 나타냄
    const[nextNumber, setNextNumber] = useState(1); //사용자가 클릭해야하는 처음수가 1이기 때문
    
+   //시간을 5초로 변경
+   const [timer ,setTimer] = useState(20);; //처음 초기 시간 설정
    // 게임 상태에 따라 사용자한테 보여줄 메세지를 표현
    const[message, setMessage] = useState(""); //처음에는 할 말이 없기 때문에 빈공간
    
+   useEffect(() => {
+    let countdown; //count = 숫자 down = 내림 숫자가 점점 내려간다는 영어
+    if(timer > 0){ //남은 시간이 0보다 크다면 숫자를 점점 줄이겠다}
+      countdown = setTimeout(() => {
+        setTimer(timer -1);
+      },2000);
+
+    }else if(timer === 0){//남은 시간이 없다면
+     alert("시간 초과! 게임이 종료되었습니다.");
+    }
+   })
    const 숫자클릭하기 = (number) => {
-      //만약에 현재 사용자가 클릭해야하는 숫자와 사용자가 클릭한 숫자가 서로 일치하는가 ?
-
-      if(number === nextNumber) {
-         if(number === 9) {
-              setMessage('축하합니다. 모든 숫자를 순서대로 클릭했습니다.');
-             //setIsCorrect(true)
-            //9까지 왔으면 다음 숫자를 10으로 만들어줘요
-
-            } else {
-               setNextNumber(nextNumber + 1);
-         }
-
-       } else {
-               setMessage('틀렸습니다.처음부터 다시하세요.')
-       }
-   };
+    //만약에 현재 사용자가 클릭해야하는 숫자와 사용자가 클릭한 숫자가 서로 일치하는가 ?
+    if (number === nextNumber) {
+      if (number === 9) {
+        setMessage("축하합니다. 모든 숫자를 순서대로 클릭했습니다.");
+        // setIsCorrect(true);
+        // 9까지왔으면 다음 숫자를 10으로 만들어줌
+        setNextNumber(nextNumber + 1);
+      } else {
+        setNextNumber(nextNumber + 1);
+      }
+    } else {
+      setMessage("틀렸습니다. 처음부터 다시하세요.");
+    }
+  };
    
-   const 재시작버튼 = () => {
+  const 재시작버튼 = () => {
     setNumbers(배열랜덤섞기([...Array(9).keys()].map((n) => n + 1))); //다시 초기 숫자 세팅
-     //다음숫자 세팅
-     setNextNumber(1);
-     //메세지 세팅
-     setMessage("");
-     //setIsCorrect(false);
-   };
-   
-   
-   return (
+    // 다음숫자 세팅
+    setNextNumber(1);
+    // 메세지 세팅
+    setMessage("");
+    //  setIsCorrect(false);
+    setTimer(20);
+  };
+  return (
     <div className="tictaptoe-container">
       <h1>틱탭토</h1>
+      <div className="timer">남은시간 : {timer}초</div>
       <div className="tictaptoe-grid">
         {numbers.map((number) => (
-          <button className="tictaptoe-button" 
-          key={number} 
-          onClick={() => 숫자클릭하기(number)}>
+          <button
+            className="tictaptoe-button"
+            key={number}
+            onClick={() => 숫자클릭하기(number)}
+          >
             {number}
           </button>
         ))}
       </div>
       <p>{message}</p>
-      {/*예를들어 수를 모두 맞출 경우에만 다음단계로 이동버튼 보여주기
-         다음단계로 이동 버튼이 나오기 위해서 nextNumber 숫자값이 10일 떄 다음 단계로 이동 버튼이 나오게 설정
-      */}
-      {nextNumber > 9 && (<Link to="/ttt-twostep"><button>처음으로 이동</button></Link>)}
-   
-      
+
       <button className="restart-button" onClick={재시작버튼}>게임 재시작</button>
-      {/*예를들어 수를 모두 맞출 경우에만 다음단계로 이동버튼 보여주기
-        다음단계로 이동 버튼이 나오기 위해서 nextNumber 숫자값이 10일 때 다음 단계로 이동버튼이
-        나오게 설정
+      {/*예를들어 수를 모두 맞출 경우에만 다음단계로 이동버튼보여주기
+        다음단계로 이동 버튼이 나오기 위해서 nextNumber 숫자값이 10일 때 다음 단계로 이동 버튼이 나오게 설정
       */}
-     {nextNumber > 9 && (<Link to="/ttt-twoStep"><button>다음단계로 이동</button></Link>)}
+
+      {nextNumber > 9 && ( <Link to="/ttt-twoStep"> <button> 다음단계로 이동</button> </Link>
+      )}
     </div>
   );
 };
 
 export default TicTapToe;
-
 
 
