@@ -42,6 +42,11 @@ import Axios예제1번 from "./component/R25_Axios_Ex1.js";
 //import Axios예제2번 from "./component/복사.js";
 import Fetch예제1번 from "./component/R28_Fetch.ex.js";
 import Fetch예제2번 from "./component/R29_Fetch_Ex2.js";
+import Board from "./component/R30_PageNation/Board.js";
+//import {Board as Board} from './component/R30_PagiNation/Board.js';
+import Album from "./component/R31_PagiNationEx/Album.js";
+
+import ProFile from "./component/R32_Profile.js";
 function App() {
   return (
      /* 
@@ -88,7 +93,10 @@ function App() {
        {/*<Axios예제1번/>*/}
       {/* <Axios예제2번/>*/}
        {/*<Fetch예제1번/>*/}
-       <Fetch예제2번/>
+      <Fetch예제2번/>
+     {/* <Board/>*/}
+      {/*<Album />*/}
+      {/* <ProFile />*/}
     </div>
   );
 }
