@@ -16,7 +16,7 @@ const Axios_Ex2 = () => {
         axios.get("https://jsonplaceholder.typicode.com/comments")
             //무사히 잘 가져왔다면 then으로 data 값 변경6+
             .then(res => {
-                setData(res.comments);
+                setData(res.data);
             })
             //가져오는데 실패했다면 에러 보여주기
             .catch( () => {
