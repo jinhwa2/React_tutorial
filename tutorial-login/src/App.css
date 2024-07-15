@@ -1,38 +1,33 @@
-.App {
-  text-align: center;
+/* index.js 에 root로 작성된 id style*/
+#root {
+  padding: 15px;
+}
+.signup-wrapper {
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.signup-container {
+  width: 300px;
+  padding: 10px;
+  position: absolute;
+  background-color: white;
+  border: 3px solid #ccc;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.signup-container > label {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding: 5px 0;
 }
+ .signup-container > label > input {
+  flex-basis: 65%;
+ }
 
-.App-link {
-  color: #61dafb;
-}
+ .signup-container button {
+  width: 100%;
+ }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+ .id-err {
+  color: red;  /*글자색 설정*/
+  font-weight: bold; /*글씨 굵기*/
+ }
