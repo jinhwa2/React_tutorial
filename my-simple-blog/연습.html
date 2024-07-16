@@ -1,0 +1,188 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>롯데시네마</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    
+    <meta id="description" content="Happy Memories 롯데시네마는 최상의 관람 환경과 양질의 켄텐츠로 영화를 통해 고객에게 행복한 기억을 선물합니다.">
+    <meta id="Keywords" content="롯데시네마, LOTTE CINEMA, 롯시, 시네마, CINEMA, 영화, 영화관, 극장, 티켓, 박스오피스, Movie, Theater, 예매, 현재상영작, 상영예정작, 개봉영화, 영화예매, 영화예매순위, 영화순위, 상영시간표" />
+    <link href="https://www.lottecinema.co.kr/NLCHS/favicon.ico?v=1" rel="shortcut icon" type="image/x-icon" />
+    <script type="text/javascript">
+
+        var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Windows CE', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson', 'Windows Phone');
+
+        for (var word in mobileKeyWords) {
+
+            if (navigator.userAgent.match(mobileKeyWords[word]) != null) {
+                //URL공유시 PC -> 모바일 전환할 떄, 상세 하위 주소 포함.
+                //엔드포인트 404 체크하여 메인으로 보냄.
+                var url = location.href.replace('NLCHS', 'NLCMW');
+                var http = new XMLHttpRequest();
+                http.open('HEAD', url, false);
+                http.send();
+                if (http.status == 404) {
+                    location.href = "https://www.lottecinema.co.kr/NLCMW/"
+                }
+                else {
+                    location.href = url
+                }
+                break;
+            }
+        }
+
+    </script>
+    
+    <link rel="stylesheet" href="/NLCHS/Content/css/default.css?v=202407161446">
+    <link rel="stylesheet" href="/NLCHS/Content/css/owl.css?v=202407161446">
+    <link rel="stylesheet" href="/NLCHS/Content/css/swiper.css?v=202407161446">
+    <link rel="stylesheet" href="/NLCHS/Content/css/jquery.mCustomScrollbar.css?v=202407161446">
+    <link rel="stylesheet" href="/NLCHS/Content/css/common.css?v=202407161446">
+    <link rel="stylesheet" href="/NLCHS/Content/css/content.css?v=202407161446">
+    <link rel="stylesheet" href="/NLCHS/Content/css/content_lc21new.css?v=202407161446" />
+    <link rel="stylesheet" href="/NLCHS/Content/css/dev.css?v=202407161446">
+
+    
+    <script type="text/javascript">
+        var CinemaServerDomain = "https://www.lottecinema.co.kr";
+        var EventServerDomain = "https://event.lottecinema.co.kr";
+        var CinemaServiceDomain = "";
+        var Language = "KR";
+        //서비스플랫폼 NLCMW:모바일웹, NLCMS:모바일앱, NLCHS:웹
+        var PLATFORM_TYPE = "NLCHS";
+        var CHANNEL_TYPE = "HO";
+        const headTitle = "Main";
+    </script>
+    <script src="/NLCHS/Content/js/jquery-1.12.3.min.js"></script>
+    <script src="/NLCHS/Content/js/jquery.jplayer.min.js"></script>
+    <script src="/NLCHS/Content/js/jquery.lazy.min.js"></script>
+    <script src="/NLCHS/Content/js/jquery-ui.min.js"></script>
+    <script src="/NLCHS/Content/js/jquery.cookie.js"></script>
+    <script src="/NLCHS/Content/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/NLCHS/Content/js/owl.carousel-2.3.4-custom.js"></script>
+    <script src="/NLCHS/Content/js/plugin.js"></script>
+    <script src="/NLCHS/Content/js/pl_custom.js"></script>
+    <script src="/NLCHS/Scripts/Library/moment.js"></script>
+    <script type='text/javascript' src='https://members.lpoint.com/api/js/lotte.sso.api.js'></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script src="/NLCHS/Content/js/common.js?v=202407161446"></script>
+    <script src="/NLCHS/Scripts/common/Cookie.js?v=202407161446"></script>
+    
+
+    <script src="/NLCHS/Scripts/Library/jquery.blockUI.min.js"></script>
+    <script src="/NLCHS/Scripts/Library/React/remarkable.min.js"></script>
+    <script src="/NLCHS/Scripts/Library/React/axios.min.js"></script>
+    <script src="/NLCHS/Scripts/common/URLSearchParamsCustom.js"></script>
+    <script src="/NLCHS/Scripts/common/Util.js?v=202407161446"></script>
+    <script src="/NLCHS/Scripts/common/Common.js?v=202407161446"></script>
+    <script src="/NLCHS/Scripts/common/ShareSNS.js?v=202407161446"></script>
+    <script src="/NLCHS/Scripts/Member/Member.js"></script>
+    <script type="text/javascript">
+        var MypageCommonQuery = RequestParams(document.location.search);					//페이지 파라메터
+    </script>
+    
+    <!-- Google Tag Manager -->
+    
+    <script src="/NLCHS/Scripts/common/lcga.js?v=202407161446"></script>
+    <script src="/NLCHS/Scripts/common/lcgaG4.js?v=202407161446"></script>
+    <!-- Google Tag Manager -->
+    
+</head>
+<body>
+    
+    
+    
+    
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8MP435" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PS4DGRG" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    
+
+    
+    <span itemscope="" itemtype="http://schema.org/Organization" style="display:none;">
+        <link itemprop="url" href="https://www.lottecinema.co.kr">
+        <a itemprop="sameAs" href="https://www.facebook.com/LotteCinema.kr"></a>
+        <a itemprop="sameAs" href="https://www.youtube.com/channel/UCi4KivcV3a3yhkycFsjpalQ"></a>
+        <a itemprop="sameAs" href="https://www.instagram.com/lottecinema_official/"></a>
+        <a itemprop="sameAs" href="https://apps.apple.com/kr/app/id601280722"></a>
+        <a itemprop="sameAs" href="https://play.google.com/store/apps/details?id=kr.co.lottecinema.lcm"></a>
+        
+    </span>
+
+    
+    <div id="loading" class="loader loader-bouncing is-active hidden"></div>
+    
+
+    
+    <div id="skip_nav_section" class="skip_nav"></div>
+    <div id="main_top_of_top_banner" class="banner_top_wrap banner_type01"></div>
+    <div id="header_section" class="header ty3"></div>
+    
+
+    
+    
+
+
+<div id="sub_section"></div>
+<div id="layerMovieTrailer" class="layer_wrap ty2 layer_movie_trailer"></div>
+
+
+<script src="/NLCHS/Scripts/Dist/MainIndex.bundle.js?v=202407161446"></script>
+    
+
+    
+    <div id="banner_side_section" class="banner_side_wrap"></div>
+    <div id="banner_section" class="banner_wrap"></div>
+    <div id="footer_section" class="footer"></div>
+    
+    
+    
+    <div id="layerCommonAlert" class="layer_wrap layer_alert layer_wrap200"></div>
+    <ul id="layerPopupMulti" class="layer_wrap layerMultiType"></ul>
+
+    
+    
+    
+
+    
+
+    <script src="/NLCHS/Scripts/common/aes.js"></script>
+    <script src="/NLCHS/Scripts/common/sso.js?v=202407161446"></script>
+    <script src="/NLCHS/Scripts/common/LcCommon.js?v=202407161446"></script>
+    <script src="/NLCHS/Scripts/common/crossDomainStorage.js?v=202407161446"></script>
+
+    <script src="/NLCHS/Scripts/Dist/LayoutTopOfTop.bundle.js?v=202407161446"></script>
+    <script src="/NLCHS/Scripts/Dist/LayoutSkipNav.bundle.js?v=202407161446"></script>
+    <script src="/NLCHS/Scripts/Dist/LayoutHeaderMenu.bundle.js?v=202407161446"></script>
+    <script src="/NLCHS/Scripts/Dist/LayoutBanner.bundle.js?v=202407161446"></script>
+    <script src="/NLCHS/Scripts/Dist/LayoutFooter.bundle.js?v=202407161446"></script>
+
+    
+    
+    
+
+    <script>
+        if (document.readyState == "complete") {
+            document.getElementById("loading").classList.remove('loader');
+            document.getElementById("loading").classList.remove('loader-bouncing');
+            document.getElementById("loading").classList.remove('is-active');
+        }
+
+                                        //document.addEventListener('readystatechange', event => {
+                                        //    if (event.target.readyState === "complete") {
+                                        //        document.getElementById("loading").classList.remove('loader');
+                                        //        document.getElementById("loading").classList.remove('loader-bouncing');
+                                        //        document.getElementById("loading").classList.remove('is-active');
+                                        //    }
+                                        //});
+    </script>
+</body>
+</html>

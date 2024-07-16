@@ -1,5 +1,12 @@
 import React, {useState} from "react";
 
+/*
+F12 를 누르고 console(콘솔) 창에서
+error 가 없는지 확인
+만약 error가 뜬다면
+백엔드 서버와 연결이 안됐을 가능성이 높음
+
+*/
 
 const Signup = () => {
   const [id, setId] = useState('');
@@ -69,7 +76,7 @@ const Signup = () => {
            input값들 = {khT, khT1234};
      */
 
-      fetch("/signUp", {
+      fetch("/signup", {
         //Spring Boot Container에 @PostMapping("/signUp") 에 전달하겠다는 표시
          method : "POST", 
          
@@ -91,6 +98,10 @@ const Signup = () => {
           //input 값들 모두 초기화
           setId('');
           setPw('');
+          setPwCheck('');
+          setName('');
+          //setResult('');
+         
         } else {
           setResult('회원가입 실패~!');
         }

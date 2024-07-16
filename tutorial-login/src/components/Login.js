@@ -40,10 +40,15 @@ const Login = () => {
         //id,pw값 모두 지우기
         setId('');
         setPw('');
+        alert('로그인성공~!')
       })
    }
-
-   return(
+    /*로그아웃 이벤트 핸들러 */
+    const 로그아웃버튼 = () => {
+      setLoginMember(null);
+    }
+    
+ return(
     <div className="login-container">
       <table>
         <tbody>
@@ -64,8 +69,14 @@ const Login = () => {
           </td>
         </tbody>
       </table>
+
+      {/*loginMember가 null이 아닌 경우 로그아웃 버튼 보이게 하기 */}
+      {loginMember && (
+        <button>로그아웃</button>
+      )} 
+
     </div>
    );
 
-};
+  };
 export default Login;

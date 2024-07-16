@@ -15,3 +15,5 @@ const handleImageChange = (event) => {
     reader.readAsArrayBuffer(file);
   }
 };
+
+ex

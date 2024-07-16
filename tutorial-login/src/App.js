@@ -28,7 +28,9 @@ function App() {
      <h1>Todo List</h1>
      {/*로그인을 해야지 TodoList 확인 가능 */}
      <Login/>
-     
+     <hr />
+     {/*로그인이 되었을 때 로그인한 화면의 TodoList 출력*/}
+     {loginMember && (/* TodoList.js import하기 */)}
      {/* value={} => 하나의 값만 작성
         value={{}} => 두가지 이상의 값을 작성
         loginMember => 처음에 로그인 안된 초기값을 가지고 있는 것

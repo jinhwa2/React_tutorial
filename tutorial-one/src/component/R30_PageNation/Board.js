@@ -23,21 +23,21 @@ const Board = () => {
 
 
     //현재페이지에서 첫번째 항목과 마지막 항목, 게시글리스트 체크
-    const 마지막항목 = currentPage * itemPerPage; // 변수명변경 마지막항목 -> lastItem
-    const 첫번째항목 = 마지막항목 - itemPerPage; // 변수명변경 첫번째항목 -> firstItem 
-    const 게시글리스트 = data.slice(첫번째항목, 마지막항목);
+    const lastItem = currentPage * itemPerPage; // 변수명변경 마지막항목 length -> lastItem
+    const firstItem = lastItem - itemPerPage; // 변수명변경 첫번째항목 index -> firstItem 
+    const postList = data.slice(firstItem, lastItem);
 
     // 이동할 페이지를 클릭할 때 사용할 핸들러
-    const paginate = (페이지번호) => setCurrentPage(페이지번호); 
+    const paginate = (pageNumber) => setCurrentPage(pageNumber); 
 
     return (
         <div className='container'>
             <h1>리액트 페이지네이션 예제</h1>
             {/* ul 태그 안에는 각 항목들의 제목이 보여질 것 */}
             <ul className='list-group mb-4'>
-                {게시글리스트.map(항목 => (
-                    <li key={항목.id} className='list-group-item'>
-                        {항목.title}
+                {postList.map(post => (
+                    <li key={post.id} className='list-group-item'>
+                        {post.title}
                     </li>
                 ))}
             </ul>
@@ -49,18 +49,6 @@ const Board = () => {
                 currentPage={currentPage} />
         </div>
     )
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
 export default Board;
